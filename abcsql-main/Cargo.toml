@@ -1,0 +1,19 @@
+[package]
+name = "abcsql"
+version = "0.1.0"
+authors = ["Willy Svenningsson <willy@fager.st>"]
+edition = "2018"
+
+# https://stackoverflow.com/questions/27632660/how-do-i-use-conditional-compilation-with-cfg-and-cargo
+
+[dependencies]
+gluesql  = {version="0.3"}
+csv="1.1"
+sqlparser = { version = "0.6.1", features = ["serde"] }
+
+[features]
+sled-storage=[]
+
+[[bin]]
+name="abcsql"
+path="src/abcsql/main.rs"
